@@ -1,27 +1,29 @@
 ## Features
-- build from the gollum master branch
+- target multi-platform for [gollum](https://github.com/gollum/gollum) by `docker buildx`
 - add [gollum-auth](https://github.com/bjoernalbers/gollum-auth) to do the basic authentication
 - use rackup to start
 - a customized collapsable sidebar
 
 ## Contents
 
-### [gollum](https://github.com/gollum/gollum)
+### gollum
 the modified gollum files
 - add activemodel to `gollum.gemspec` as the gollum-auth need it
 - in Dockerfile, install the self-build gem file `gollum-auth-0.7.1.gem`,
-as there is a issue when using docker build gollum and install gollum-auth from gem sources 
+as there is conflict issue when using docker build gollum with gollum-auth installed from gem sources 
 
-### [gollum-auth](https://github.com/bjoernalbers/gollum-auth)
+### gollum-auth
 the http basic authentication middleware for gollum
-- change the references to latest ones, as it has conflicts with gollum
+- change the references to the latest gems, as it has conflicts with gollum
 
-use docker to build the gem file: `docker build -t gollum-auth .`
+use docker to build the gem file: \
+`docker build -t gollum-auth .`
 
-copy the file out: `docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
+copy the file out: \
+`docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
 
 ### wiki
-the customized js & css, and config.ru for rack including the enhanced [NiceTOC](https://github.com/gollum/gollum/wiki/Custom-macros) that can be collapsed
+the customized js & css, and config.ru for rack, including the enhanced [NiceTOC](https://github.com/gollum/gollum/wiki/Custom-macros) as sidebar that can be collapsed
 
 ## How to
 
@@ -31,12 +33,14 @@ the customized js & css, and config.ru for rack including the enhanced [NiceTOC]
 - `docker buildx create --use --name mybuilder #node-amd64`
 - `docker buildx inspect mybuilder --bootstrap`
 
-### build
+### build the image
 
-#### push to docker hub
-`docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`
-#### output as local image
-`docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --out=type=image -t balder1840/gollum:v5.3.0 .`
+1. pull the latest gollum and use the modified files to override them
+2. build <br>
+    2.1. push to docker hub: \
+      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`<br>
+    2.2. or output as local image: \
+      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --out=type=image -t balder1840/gollum:v5.3.0 .`
 
 ### use the image
 
