@@ -61,7 +61,7 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
 > you can find a image here at [docker hub](https://hub.docker.com/repository/docker/balder1840/gollum)
 
 
-## refs
+## Refs
 - [Docker Buildx](https://docs.docker.com/buildx/working-with-buildx/)
 - [docker buildx build](https://docs.docker.com/engine/reference/commandline/buildx_build/)
 - [Leverage multi-CPU architecture support](https://docs.docker.com/desktop/multi-arch/)
