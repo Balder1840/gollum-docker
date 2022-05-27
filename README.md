@@ -37,9 +37,9 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
 
 1. pull the latest gollum and use the modified files to override them
 2. build <br>
-    2.1. push to docker hub:  
+    - push to docker hub:  
       `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`  
-    2.2. or output as local image:  
+    - or output as local image:  
       `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --out=type=image -t balder1840/gollum:v5.3.0 .`
 
 ### use the image
