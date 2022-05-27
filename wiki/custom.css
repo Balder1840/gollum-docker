@@ -1,0 +1,44 @@
+.main-content > .markdown-body {
+ padding-top: 0;
+ padding-left: 10px;
+}
+
+.main-content > .markdown-body > p[dir='auto']:first-child:empty {
+    margin-bottom: 0 !important;
+}
+
+#sidebar-content ul {
+  list-style: none;
+}
+
+#sidebar-content ul ul {
+  padding-left: 15px;
+}
+
+#sidebar-content .current-page a {
+  text-decoration: underline;
+  color: #0366d6;
+}
+
+#sidebar-content li.sidebar-dir.collapsed ul {
+  display:none;
+}
+
+#sidebar-content li.sidebar-dir .sidebar-dir-title {
+  cursor: pointer;
+  position: relative;
+}
+
+#sidebar-content li.sidebar-dir .sidebar-dir-title:before {
+  content: '\25BC'; /*Black Down-pointing Triangle ▼*/
+  position: absolute;
+  display: inline-block;
+  left: -16px;
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji"
+}
+
+#sidebar-content li.sidebar-dir.collapsed .sidebar-dir-title:before {
+  content: '\25B6'; /*Black Right-pointing Triangle ▶*/
+}
+
