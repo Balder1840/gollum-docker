@@ -16,10 +16,10 @@ as there is conflict issue when using docker build gollum with gollum-auth insta
 the http basic authentication middleware for gollum
 - change the references to the latest gems, as it has conflicts with gollum
 
-use docker to build the gem file: \
+use docker to build the gem file:  
 `docker build -t gollum-auth .`
 
-copy the file out: \
+copy the file out:  
 `docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
 
 ### wiki
@@ -37,9 +37,9 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
 
 1. pull the latest gollum and use the modified files to override them
 2. build <br>
-    2.1. push to docker hub: \
-      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`<br>
-    2.2. or output as local image: \
+    2.1. push to docker hub:  
+      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`  
+    2.2. or output as local image:  
       `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --out=type=image -t balder1840/gollum:v5.3.0 .`
 
 ### use the image
