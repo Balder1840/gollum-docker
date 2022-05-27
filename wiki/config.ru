@@ -119,10 +119,6 @@ users = YAML.load %q{
   password_digest: 5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
   name: Morty Smith
   email: morty@example.com
-- username: zzh
-  password_digest: e1fb1ce32c7986123f2f37b20540105a3ad70df1557914a9eeb5aa6c0108fc3b
-  name: zzh
-  email: zzh@example.com
 }
 
 # Allow unauthenticated users to read the wiki (disabled by default).
@@ -138,10 +134,9 @@ wiki_options = {
    mathjax: true,
    css: true,
    js: true,
-#   local_time: true,
    show_local_time: true,
    sidebar: :left,
-#   static: true
+#  static: true
 }
 
 #gollum_path = File.expand_path(File.join(File.dirname(__FILE__), 'wiki/.git')) # CHANGE THIS TO POINT TO YOUR OWN WIKI REPO
