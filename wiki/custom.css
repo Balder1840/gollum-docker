@@ -42,3 +42,11 @@
   content: '\25B6'; /*Black Right-pointing Triangle ▶*/
 }
 
+.task-list-item-checkbox {
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+a.reversefootnote[role='doc-backlink'] {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji"
+}
