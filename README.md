@@ -8,29 +8,27 @@
 
 ### [gollum](https://github.com/gollum/gollum)
 the modified gollum files
-add activemodel to `gollum.gemspec` as the gollum-auth need it
-in Dockerfile, install the self-build gem file `gollum-auth-0.7.1.gem`,
+- add activemodel to `gollum.gemspec` as the gollum-auth need it
+- in Dockerfile, install the self-build gem file `gollum-auth-0.7.1.gem`,
 as there is a issue when using docker build gollum and install gollum-auth from gem sources 
 
 ### [gollum-auth](https://github.com/bjoernalbers/gollum-auth)
 the http basic authentication middleware for gollum
-change the references to latest ones, as it has conflicts with gollum
-then use docker to build a gem file
-`docker build -t gollum-auth .`
-copy the file out
-`docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
+- change the references to latest ones, as it has conflicts with gollum
+
+use docker to build the gem file: `docker build -t gollum-auth .`
+copy the file out: `docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
 
 ### wiki
-the customized js & css, 
-config.ru for rack including the enhanced [NiceTOC](https://github.com/gollum/gollum/wiki/Custom-macros) that can be collapsed
+the customized js & css, and config.ru for rack including the enhanced [NiceTOC](https://github.com/gollum/gollum/wiki/Custom-macros) that can be collapsed
 
 ## How to
 
 ### usefull commands
-`docker context ls`
-`docker buildx ls`
-`docker buildx create --use --name mybuilder #node-amd64`
-`docker buildx inspect mybuilder --bootstrap`
+- `docker context ls`
+- `docker buildx ls`
+- `docker buildx create --use --name mybuilder #node-amd64`
+- `docker buildx inspect mybuilder --bootstrap`
 
 ### build
 
@@ -44,7 +42,7 @@ config.ru for rack including the enhanced [NiceTOC](https://github.com/gollum/go
 1. create a folder let's say ~/wiki
 2. move config.ru, costum.css, custom.js to ~/wiki and use git to check in 
 3. run 
-   ```bash
+ ```bash
    docker run -d \
    --name gollum \
    -p 8080:4567 \
@@ -52,9 +50,11 @@ config.ru for rack including the enhanced [NiceTOC](https://github.com/gollum/go
    -e GOLLUM_AUTHOR_EMAIL=xxx@google.com \
    -v /home/wiki:/wiki balder1840/gollum:tagname \
    --host 0.0.0.0 \
-   --port 4567```
+   --port 4567
+```
 
 > you can find a image here at [docker hub](https://hub.docker.com/repository/docker/balder1840/gollum)
+
 
 ## refs
 - [Docker Buildx](https://docs.docker.com/buildx/working-with-buildx/)
