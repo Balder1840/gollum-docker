@@ -53,7 +53,7 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
    -p 8080:4567 \
    -e GOLLUM_AUTHOR_USERNAME=xxx \
    -e GOLLUM_AUTHOR_EMAIL=xxx@google.com \
-   -v /home/wiki:/wiki balder1840/gollum:tagname \
+   -v ~/wiki:/wiki balder1840/gollum:tagname \
    --host 0.0.0.0 \
    --port 4567
 ```
