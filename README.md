@@ -17,6 +17,7 @@ the http basic authentication middleware for gollum
 - change the references to latest ones, as it has conflicts with gollum
 
 use docker to build the gem file: `docker build -t gollum-auth .`
+
 copy the file out: `docker cp gollum-auth:/pkg/gollum-auth-0.7.1.gem ~/`
 
 ### wiki
