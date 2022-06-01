@@ -58,7 +58,7 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
    --port 4567
 ```
 
-> you can find a image here at [docker hub](https://hub.docker.com/repository/docker/balder1840/gollum)
+> you can find a image here at [docker hub](https://hub.docker.com/r/balder1840/gollum)
 
 
 ## Refs
