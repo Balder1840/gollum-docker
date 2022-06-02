@@ -57,6 +57,19 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
    --host 0.0.0.0 \
    --port 4567
 ```
+or
+ ```bash
+   docker run -d \
+   --name gollum \
+   -p 8080:4567 \
+   -e GOLLUM_AUTHOR_USERNAME=xxx \
+   -e GOLLUM_AUTHOR_EMAIL=xxx@google.com \
+   -v ~/wiki:/wiki balder1840/gollum:tagname \
+   -v ~/YourConfigRu:/config.ru \
+   /config.ru \
+   --host 0.0.0.0 \
+   --port 4567
+```
 
 > you can find a image here at [docker hub](https://hub.docker.com/r/balder1840/gollum)
 
