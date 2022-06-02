@@ -64,8 +64,9 @@ or
    -p 8080:4567 \
    -e GOLLUM_AUTHOR_USERNAME=xxx \
    -e GOLLUM_AUTHOR_EMAIL=xxx@google.com \
-   -v ~/wiki:/wiki balder1840/gollum:tagname \
+   -v ~/wiki:/wiki \
    -v ~/YourConfig.ru:/config.ru \
+   balder1840/gollum:tagname \
    /config.ru \
    --host 0.0.0.0 \
    --port 4567
