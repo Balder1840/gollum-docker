@@ -40,7 +40,7 @@ the customized js & css, and config.ru for rack, including the enhanced [NiceTOC
     - push to docker hub:  
       `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --push -t balder1840/gollum:v5.3.0 .`  
     - or output as local image:  
-      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --out=type=image -t balder1840/gollum:v5.3.0 .`
+      `docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 --output=type=image -t balder1840/gollum:v5.3.0 .`
 
 ### use the image
 
